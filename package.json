@@ -1,0 +1,23 @@
+{
+  "name": "09-readme-generator",
+  "version": "1.0.0",
+  "description": "A professional README generator",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jack421myhre/09-README-generator.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jack421myhre/09-README-generator/issues"
+  },
+  "homepage": "https://github.com/jack421myhre/09-README-generator#readme",
+  "dependencies": {
+    "inquirer": "^8.2.4"
+  }
+}
