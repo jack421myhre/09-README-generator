@@ -18,78 +18,86 @@ const questions = [
 ];
 
 // TODO: Create a function to write README file
-function writeToFile(fileName, data) {}
+function writeToFile(fileName, data) {
+    fs.writeFile(fileName, generateMarkdown(data), (err) => {
+        err ? console.error(err) : console.log("Success!");
+    });
+}
 
 // TODO: Create a function to initialize app
 function init() {
-    inquirer.prompt([
-        {
-            type: "input",
-            message: `${questions[0]}`,
-            name: "title",
-        },
-        {
-            type: "input",
-            message: `${questions[1]}`,
-            name: "toc",
-        },
-        {
-            type: "input",
-            message: `${questions[2]}`,
-            name: "description",
-        },
-        {
-            type: "input",
-            message: `${questions[3]}`,
-            name: "installation",
-        },
-        {
-            type: "input",
-            message: `${questions[4]}`,
-            name: "usage",
-        },
-        {
-            type: "input",
-            message: `${questions[5]}`,
-            name: "credits",
-        },
-        {
-            type: "list",
-            message: `${questions[6]}`,
-            choices: [
-                "GNU AGPLv3",
-                "GNU GPLv3",
-                "GNU LGPLv3",
-                "Mozilla Public License 2.0",
-                "Apache License 2.0",
-                "MIT License",
-                "Boost Software License 1.0",
-                "Unlicense",
-            ],
-            default: "Unlicense",
-            name: "license",
-        },
-        {
-            type: "input",
-            message: `${questions[7]}`,
-            name: "contribution",
-        },
-        {
-            type: "input",
-            message: `${questions[8]}`,
-            name: "tests",
-        },
-        {
-            type: "input",
-            message: `${questions[9]}`,
-            name: "githubProfile",
-        },
-        {
-            type: "input",
-            message: `${questions[10]}`,
-            name: "email",
-        },
-    ]);
+    inquirer
+        .prompt([
+            {
+                type: "input",
+                message: `${questions[0]}`,
+                name: "title",
+            },
+            {
+                type: "input",
+                message: `${questions[1]}`,
+                name: "toc",
+            },
+            {
+                type: "input",
+                message: `${questions[2]}`,
+                name: "description",
+            },
+            {
+                type: "input",
+                message: `${questions[3]}`,
+                name: "installation",
+            },
+            {
+                type: "input",
+                message: `${questions[4]}`,
+                name: "usage",
+            },
+            {
+                type: "input",
+                message: `${questions[5]}`,
+                name: "credits",
+            },
+            {
+                type: "list",
+                message: `${questions[6]}`,
+                choices: [
+                    "GNU AGPLv3",
+                    "GNU GPLv3",
+                    "GNU LGPLv3",
+                    "Mozilla Public License 2.0",
+                    "Apache License 2.0",
+                    "MIT License",
+                    "Boost Software License 1.0",
+                    "Unlicense",
+                ],
+                default: "Unlicense",
+                name: "license",
+            },
+            {
+                type: "input",
+                message: `${questions[7]}`,
+                name: "contribution",
+            },
+            {
+                type: "input",
+                message: `${questions[8]}`,
+                name: "tests",
+            },
+            {
+                type: "input",
+                message: `${questions[9]}`,
+                name: "githubProfile",
+            },
+            {
+                type: "input",
+                message: `${questions[10]}`,
+                name: "email",
+            },
+        ])
+        .then((response) => {
+            writeToFile("README.md", generateMarkdown(response));
+        });
 }
 
 // Function call to initialize app
