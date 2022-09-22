@@ -3,9 +3,9 @@ const inquirer = require("inquirer");
 const fs = require("fs");
 const generateMarkdown = require("./utils/generateMarkdown");
 // TODO: Create an array of questions for user input
+// Questions for the user
 const questions = [
     "What is the title of your project?",
-    "What are the Table of Contents for your project?",
     "What is the description of your project?",
     "What installations are there for your project?",
     "What usage instructions are there for using your project?",
@@ -13,11 +13,13 @@ const questions = [
     "Which license does your project have?",
     "What contribution guidelines does your project have?",
     "What test instructions does your project have?",
-    "What is your GitHub profile for Questions?",
+    "What is your GitHub username for Questions?",
     "What is your email for Questions if users would like to reach out?",
 ];
 
 // TODO: Create a function to write README file
+// Grabs the users answers and calls the generateMarkdown function.
+// This writes to the README.md file dynamically
 function writeToFile(fileName, data) {
     fs.writeFile(fileName, generateMarkdown(data), (err) => {
         err ? console.error(err) : console.log("Success!");
@@ -25,6 +27,8 @@ function writeToFile(fileName, data) {
 }
 
 // TODO: Create a function to initialize app
+
+// Prompts questions for the user on the command line
 function init() {
     inquirer
         .prompt([
@@ -36,31 +40,26 @@ function init() {
             {
                 type: "input",
                 message: `${questions[1]}`,
-                name: "toc",
-            },
-            {
-                type: "input",
-                message: `${questions[2]}`,
                 name: "description",
             },
             {
                 type: "input",
-                message: `${questions[3]}`,
+                message: `${questions[2]}`,
                 name: "installation",
             },
             {
                 type: "input",
-                message: `${questions[4]}`,
+                message: `${questions[3]}`,
                 name: "usage",
             },
             {
                 type: "input",
-                message: `${questions[5]}`,
+                message: `${questions[4]}`,
                 name: "credits",
             },
             {
                 type: "list",
-                message: `${questions[6]}`,
+                message: `${questions[5]}`,
                 choices: [
                     "GNU AGPLv3",
                     "GNU GPLv3",
@@ -76,27 +75,27 @@ function init() {
             },
             {
                 type: "input",
-                message: `${questions[7]}`,
+                message: `${questions[6]}`,
                 name: "contribution",
             },
             {
                 type: "input",
-                message: `${questions[8]}`,
+                message: `${questions[7]}`,
                 name: "tests",
             },
             {
                 type: "input",
-                message: `${questions[9]}`,
+                message: `${questions[8]}`,
                 name: "githubProfile",
             },
             {
                 type: "input",
-                message: `${questions[10]}`,
+                message: `${questions[9]}`,
                 name: "email",
             },
         ])
         .then((response) => {
-            writeToFile("README.md", generateMarkdown(response));
+            writeToFile("README.md", response);
         });
 }
 
