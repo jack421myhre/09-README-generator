@@ -15,6 +15,7 @@ A README generator that takes user answers and dynamically applies it to the sec
 npm Inquirer and the Node File System module
 ## Usage 
 Run the index.js file to begin the application. Once the questions are answered, the README will generate.
+
 To see it in action, follow the link: https://www.youtube.com/watch?v=NhlZP5Tq5GM
 ## Credits
 none
