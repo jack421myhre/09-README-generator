@@ -95,7 +95,7 @@ function init() {
             },
         ])
         .then((response) => {
-            writeToFile("README.md", response);
+            writeToFile("./customReadme/README.md", response);
         });
 }
 
