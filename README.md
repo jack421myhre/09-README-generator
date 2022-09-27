@@ -1,8 +1,8 @@
 
-# Professional README Generator
+# Team Profile Generator
 [![License: Unlicense](https://img.shields.io/badge/license-Unlicense-blue.svg)](http://unlicense.org/)
 ## Description
-This tool allows users to generate a README directly from the command line after answering 10 questions. This README was generated using this tool!
+This project dynamically generates a page for you and your team. It tracks the role, ID numbers, emails, github profiles, and schools based on the type of employee created. 
 ## Table of Contents
 * [Installation](#installation)
 * [Usage](#usage)
@@ -12,20 +12,19 @@ This tool allows users to generate a README directly from the command line after
 * [Tests](#tests)
 * [Questions](#questions)
 ## Installation
-NPM Inquirer package and Node File System Module.
+npm Inquirer, Node File System module
 ## Usage 
-Follow this link to see how it works!
-https://www.youtube.com/watch?v=NhlZP5Tq5GM
+Run the index.js file on the command line to start to application. Answer the prompts accordingly to create each employee card. Exit the application by selecting 'n' when asked about adding more team members. The HTML will then be generated.
 ## Credits
-None
+none
 ## License
 This repository is Unlicensed and free to use.
 
 http://unlicense.org/
 ## Contributing
-None
+none
 ## Tests
-None
+This application uses the Jest testing suite. To run tests, simply run 'npm i' to install Jest then run 'npm run test' to test the application. The testing conditions were provided by the instructional team.
 ## Questions?
 GitHub: [jack421myhre](https://github.com/jack421myhre)
 
