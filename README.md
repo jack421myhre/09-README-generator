@@ -1,8 +1,8 @@
 
-# Team Profile Generator
+# Professional README Generator
 [![License: Unlicense](https://img.shields.io/badge/license-Unlicense-blue.svg)](http://unlicense.org/)
 ## Description
-This project dynamically generates a page for you and your team. It tracks the role, ID numbers, emails, github profiles, and schools based on the type of employee created. 
+A README generator that takes user answers and dynamically applies it to the sections of a clean README
 ## Table of Contents
 * [Installation](#installation)
 * [Usage](#usage)
@@ -12,9 +12,9 @@ This project dynamically generates a page for you and your team. It tracks the r
 * [Tests](#tests)
 * [Questions](#questions)
 ## Installation
-npm Inquirer, Node File System module
+npm Inquirer and the Node File System module
 ## Usage 
-Run the index.js file on the command line to start to application. Answer the prompts accordingly to create each employee card. Exit the application by selecting 'n' when asked about adding more team members. The HTML will then be generated.
+Run the index.js file to begin the application. Once the questions are answered, the README will generate.
 ## Credits
 none
 ## License
@@ -24,7 +24,7 @@ http://unlicense.org/
 ## Contributing
 none
 ## Tests
-This application uses the Jest testing suite. To run tests, simply run 'npm i' to install Jest then run 'npm run test' to test the application. The testing conditions were provided by the instructional team.
+none
 ## Questions?
 GitHub: [jack421myhre](https://github.com/jack421myhre)
 
